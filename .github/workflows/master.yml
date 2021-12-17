@@ -8,9 +8,11 @@ jobs:
     name: Generate and test a sample application
     runs-on: ubuntu-latest
     strategy:
-      max-parallel: 2
+      max-parallel: 4
       matrix:
         cats: ['cats=true', 'cats=false']
+        build_info: ['build_info=true', 'build_info=false']
+        dotenv: ['dotenv=true', 'dotenv=false']
     steps:
       - name: Checkout source code
         uses: actions/checkout@v2.3.4
@@ -23,7 +25,10 @@ jobs:
           jvm: adopt:11
           apps: giter8 sbt
       - name: Generate the application
-        run: g8 file://scala-giter8 --name=test-app --${{ matrix.cats }}
+        run: |
+          g8 file://scala-giter8 --name=test-app --${{ matrix.cats }} --${{ matrix.build_info }} --${{ matrix.dotenv }}
+          cd test-app
+      - name: Run the application
+        run: sbt run
       - name: Unit test the application
-        run: cd test-app && sbt test
-
+        run: sbt test
