@@ -9,6 +9,20 @@ optionally scaffold minimal [Cats](http://typelevel.org/cats/) configuration.
 
 ## Usage
 
+### With Cats
+
 ```bash
-g8 cooperwalbrun/scala-giter8
+g8 cooperwalbrun/scala-giter8 \
+  --name='My Application Name' \
+  --package='com.mycompany.package' \
+  --cats=yes
+```
+
+### Without Cats
+
+```bash
+g8 cooperwalbrun/scala-giter8 \
+  --name='My Application Name' \
+  --package='com.mycompany.package' \
+  --cats=no
 ```

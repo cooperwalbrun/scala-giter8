@@ -1,6 +1,7 @@
-name: master
+name: Pull Requests
 on:
-  push:
+  pull_request:
+    types: [opened, edited, reopened, synchronize]
     branches:
       - master
 jobs:
@@ -26,4 +27,3 @@ jobs:
         run: g8 file://scala-giter8 --name=test-app --${{ matrix.cats }}
       - name: Unit test the application
         run: cd test-app && sbt test
-
