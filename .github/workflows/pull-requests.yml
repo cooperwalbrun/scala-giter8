@@ -26,10 +26,8 @@ jobs:
           jvm: adopt:11
           apps: giter8 sbt
       - name: Generate the application
-        run: |
-          g8 file://scala-giter8 --name=test-app --${{ matrix.cats }} --${{ matrix.build_info }} --${{ matrix.dotenv }}
-          cd test-app
+        run: g8 file://scala-giter8 --name=test-app --${{ matrix.cats }} --${{ matrix.build_info }} --${{ matrix.dotenv }}
       - name: Run the application
-        run: sbt run
+        run: cd test-app && sbt run
       - name: Unit test the application
-        run: sbt test
+        run: cd test-app && sbt test
