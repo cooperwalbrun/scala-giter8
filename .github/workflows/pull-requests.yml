@@ -1,0 +1,29 @@
+name: Pull Requests
+on:
+  pull_request:
+    types: [opened, edited, reopened, synchronize]
+    branches:
+      - master
+jobs:
+  unit-test:
+    name: Generate and test a sample application
+    runs-on: ubuntu-latest
+    strategy:
+      max-parallel: 2
+      matrix:
+        cats: ['cats=true', 'cats=false']
+    steps:
+      - name: Checkout source code
+        uses: actions/checkout@v2.3.4
+        with:
+          fetch-depth: 0
+          path: 'scala-giter8'
+      - name: Set up the JDK, Giter8, and SBT
+        uses: coursier/setup-action@v1.1.2
+        with:
+          jvm: adopt:11
+          apps: giter8 sbt
+      - name: Generate the application
+        run: g8 file://scala-giter8 --name=test-app --${{ matrix.cats }}
+      - name: Unit test the application
+        run: cd test-app && sbt test
