@@ -1,0 +1,39 @@
+name: master
+on:
+  push:
+    branches:
+      - master
+  pull_request:
+    types: [opened, edited, reopened, synchronize]
+    branches:
+      - master
+jobs:
+  unit-test:
+    name: Generate a sample application and run its unit test(s)
+    runs-on: ubuntu-latest
+    strategy:
+      max-parallel: 2
+      matrix:
+        cats: [yes, no]
+    steps:
+      - name: Checkout source code
+        uses: actions/checkout@v2.3.4
+        with:
+          fetch-depth: 0
+          path: 'scala-giter8'
+      - name: Set up the JDK and SBT
+        uses: olafurpg/setup-scala@v13
+        with:
+          java-version: adopt@1.11
+      - name: Install Coursier
+        run: |
+          curl -fLo cs https://git.io/coursier-cli-"$(uname | tr LD ld)"
+          chmod +x cs
+          ./cs install cs
+          rm cs
+      - name: Install Giter8
+        run: cs install giter8
+      - name: Generate the application
+        run: g8 file://scala-giter8 --name=test-app --cats=${{ matrix.cats }}
+      - name: Unit test the application
+        run: cd test-app && sbt test
