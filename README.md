@@ -1,11 +1,11 @@
-# scala-giter8
+# scala-giter8 ![master](https://github.com/cooperwalbrun/scala-giter8/workflows/master/badge.svg)
 
 ## Overview
 
-This is a straightforward Scala 3 project [Giter8](http://www.foundweekends.org/giter8/index.html)
-template. It provides a reasonable
-[.scalafmt.conf](https://scalameta.org/scalafmt/docs/configuration.html) and allows users to
-optionally scaffold minimal [Cats](http://typelevel.org/cats/) configuration.
+This is a straightforward Scala 3 [Giter8](http://www.foundweekends.org/giter8/index.html) template.
+It provides a reasonable [.scalafmt.conf](https://scalameta.org/scalafmt/docs/configuration.html)
+and allows users to optionally scaffold some minimal [Cats](http://typelevel.org/cats/)
+configuration.
 
 ## Usage
 
