@@ -1,0 +1,16 @@
+# Scala / JVM
+*.class
+*.log
+target
+hs_err_pid*
+
+# Visual Studio Code
+.bloop
+.metals
+metals.sbt
+.vscode
+
+# IntelliJ
+.idea
+*.iml
+.bsp
