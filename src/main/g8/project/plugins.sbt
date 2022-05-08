@@ -1,8 +1,8 @@
-addSbtPlugin("io.github.davidgregory084" % "sbt-tpolecat" % "0.1.20")
+addSbtPlugin("io.github.davidgregory084" % "sbt-tpolecat" % "0.3.1")
 $if(build_info.truthy)$
-addSbtPlugin("com.eed3si9n" % "sbt-buildinfo" % "0.10.0")
+addSbtPlugin("com.eed3si9n" % "sbt-buildinfo" % "0.11.0")
 $endif$
 $if(dotenv.truthy)$
-addSbtPlugin("au.com.onegeek" % "sbt-dotenv" % "2.1.233")
+addSbtPlugin("nl.gn0s1s" % "sbt-dotenv" % "3.0.0")
 $endif$
-// addSbtPlugin("org.scoverage" % "sbt-scoverage" % "1.9.0")
+// addSbtPlugin("org.scoverage" % "sbt-scoverage" % "1.9.3")
