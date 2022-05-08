@@ -22,7 +22,7 @@ Provisions an application which uses all the following:
 
 * [Cats](http://typelevel.org/cats/)
 * [sbt-buildinfo](https://github.com/sbt/sbt-buildinfo)
-* [sbt-dotenv](https://github.com/mefellows/sbt-dotenv)
+* [sbt-dotenv](https://github.com/Philippus/sbt-dotenv)
 
 ```bash
 g8 cooperwalbrun/scala-giter8 \
@@ -71,6 +71,6 @@ generate test applications. This can be done like so:
 g8 file:///some/path/scala-giter8 ...
 ```
 
-In the example above, the path that this repository's source code is in is
+In the example above, the path that this repository's source code resides in is
 `/some/path/scala-giter8`. Note how we prefix it with `file://`, leading to three consecutive
 slashes.

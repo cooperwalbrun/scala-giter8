@@ -15,7 +15,7 @@ features were selected:
 * [sbt-tpolecat](https://github.com/DavidGregory084/sbt-tpolecat)
 $if(cats.truthy)$* [Cats](http://typelevel.org/cats/)$endif$ 
 $if(build_info.truthy)$* [sbt-buildinfo](https://github.com/sbt/sbt-buildinfo)$endif$
-$if(dotenv.truthy)$* [sbt-dotenv](https://github.com/mefellows/sbt-dotenv)$endif$
+$if(dotenv.truthy)$* [sbt-dotenv](https://github.com/Philippus/sbt-dotenv)$endif$
 
 ## Contributing
 
