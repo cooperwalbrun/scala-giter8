@@ -6,7 +6,7 @@ lazy val root = project
   .settings(
     name := "$name;format="lower,hyphen"$",
     version := "0.1.0",
-    scalaVersion := "3.1.0",
+    scalaVersion := "3.1.1",
     trapExit := false, // See: https://stackoverflow.com/a/41390137
     $if(build_info.truthy)$
     buildInfoKeys := Seq[BuildInfoKey](name, version, scalaVersion, sbtVersion),
@@ -16,7 +16,7 @@ lazy val root = project
       $if(cats.truthy)$
       // Cats (functional programming)
       "org.typelevel" %% "cats-core" % "2.7.0",
-      "org.typelevel" %% "cats-effect" % "3.3.3",
+      "org.typelevel" %% "cats-effect" % "3.3.11",
 
       // TODO - add your dependencies here...
 

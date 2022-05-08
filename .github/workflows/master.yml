@@ -15,12 +15,11 @@ jobs:
         dotenv: ['dotenv=true', 'dotenv=false']
     steps:
       - name: Checkout source code
-        uses: actions/checkout@v2.3.4
+        uses: actions/checkout@v3
         with:
-          fetch-depth: 0
           path: 'scala-giter8'
       - name: Set up the JDK, Giter8, and SBT
-        uses: coursier/setup-action@v1.1.2
+        uses: coursier/setup-action@v1
         with:
           jvm: adopt:11
           apps: giter8 sbt
