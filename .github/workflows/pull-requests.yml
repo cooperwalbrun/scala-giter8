@@ -5,8 +5,8 @@ on:
     branches:
       - master
 jobs:
-  unit-test:
-    name: Generate and test a sample application
+  test:
+    name: Test
     runs-on: ubuntu-latest
     strategy:
       max-parallel: 8
