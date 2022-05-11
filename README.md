@@ -6,6 +6,7 @@
    2. [Opt Out of Cats](#opt-out-of-cats)
    3. [Opt Out of the BuildInfo Plugin](#opt-out-of-the-buildinfo-plugin)
    4. [Opt Out of .env File Support](#opt-out-of-env-file-support)
+   5. [Opt Out of Creating a Standalone JAR](#opt-out-of-creating-a-standalone-jar)
 3. [Testing Locally](#testing-locally)
 
 ## Overview
@@ -23,6 +24,7 @@ Provisions an application which uses all the following:
 * [Cats](http://typelevel.org/cats/)
 * [sbt-buildinfo](https://github.com/sbt/sbt-buildinfo)
 * [sbt-dotenv](https://github.com/Philippus/sbt-dotenv)
+* [sbt-assembly](https://github.com/sbt/sbt-assembly)
 
 ```bash
 g8 cooperwalbrun/scala-giter8 \
@@ -60,6 +62,21 @@ g8 cooperwalbrun/scala-giter8 \
 g8 cooperwalbrun/scala-giter8 \
   ... \
   --dotenv=no
+```
+
+### Opt Out of Creating a Standalone JAR
+
+If you do not need to produce a JAR that can be executed on its own with, for example, the
+`java -jar` command, you can opt out of using the `sbt-assembly` plugin as shown below.
+
+>Note that this is not recommended if your Scala project is going to be an *application*. However,
+>it *is* recommended to opt out of this option if your Scala project is going to be a *library or
+>framework*.
+
+```bash
+g8 cooperwalbrun/scala-giter8 \
+  ... \
+  --create_standalone_jar=no
 ```
 
 ## Testing Locally
