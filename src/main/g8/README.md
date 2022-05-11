@@ -16,6 +16,7 @@ features were selected:
 $if(cats.truthy)$* [Cats](http://typelevel.org/cats/)$endif$ 
 $if(build_info.truthy)$* [sbt-buildinfo](https://github.com/sbt/sbt-buildinfo)$endif$
 $if(dotenv.truthy)$* [sbt-dotenv](https://github.com/Philippus/sbt-dotenv)$endif$
+$if(create_standalone_jar.truthy)$* [sbt-assembly](https://github.com/sbt/sbt-assembly)$endif$
 
 ## Contributing
 

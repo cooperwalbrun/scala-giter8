@@ -12,6 +12,13 @@ lazy val root = project
     buildInfoKeys := Seq[BuildInfoKey](name, version, scalaVersion, sbtVersion),
     buildInfoPackage := "$package$",
     $endif$
+    $if(create_standalone_jar.truthy)$
+    assembly / artifact := {
+      val art = (assembly / artifact).value
+      art.withClassifier(Some("assembly"))
+    },
+    addArtifact(assembly / artifact, assembly), // Tells SBT to create an additional artifact that inlines all classpath dependencies (a.k.a. an "uber JAR")
+    $endif$
     libraryDependencies ++= Seq(
       $if(cats.truthy)$
       // Cats (functional programming)
