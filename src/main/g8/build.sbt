@@ -13,10 +13,7 @@ lazy val root = project
     buildInfoPackage := "$package$",
     $endif$
     $if(create_standalone_jar.truthy)$
-    assembly / artifact := {
-      val art = (assembly / artifact).value
-      art.withClassifier(Some("assembly"))
-    },
+    assembly / artifact := (assembly / artifact).value.withClassifier(Some("assembly")),
     addArtifact(assembly / artifact, assembly), // Tells SBT to create an additional artifact that inlines all classpath dependencies (a.k.a. an "uber JAR")
     $endif$
     libraryDependencies ++= Seq(
