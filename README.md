@@ -1,4 +1,4 @@
-# scala-giter8 ![master](https://github.com/cooperwalbrun/scala-giter8/workflows/master/badge.svg)
+# scala-giter8 [![master](https://github.com/cooperwalbrun/scala-giter8/actions/workflows/master.yml/badge.svg)](https://github.com/cooperwalbrun/scala-giter8/actions/workflows/master.yml)
 
 1. [Overview](#overview)
 2. [Usage](#usage)
@@ -19,7 +19,7 @@ alongside some common production/enterprise-friendly application features.
 
 ### Default (All Features Enabled)
 
-Provisions an application which uses all the following:
+Provisions an application which uses all of the following:
 
 * [Cats](http://typelevel.org/cats/)
 * [sbt-buildinfo](https://github.com/sbt/sbt-buildinfo)
